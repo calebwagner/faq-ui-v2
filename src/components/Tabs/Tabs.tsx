@@ -1,5 +1,7 @@
 import { tabs } from "../../constants/tabs";
-import { Questions } from "../Questions/Questions";
+import { Answer } from "../Answers/Answer";
+import { Question } from "../Questions/Question";
+import { Accordion } from "./Accordion";
 
 type Faq = {
   id: number;
@@ -33,11 +35,14 @@ export const Tabs = ({
           </button>
         ))}
       </div>
-      <Questions
-        faqList={faqList}
-        handleFaqClick={handleFaqClick}
-        activeFaqId={activeFaqId}
-      />
+      {faqList.map((faq, index) => (
+        <Accordion
+          key={index}
+          faq={faq}
+          handleFaqClick={handleFaqClick}
+          activeFaqId={activeFaqId}
+        />
+      ))}
     </>
   );
 };
