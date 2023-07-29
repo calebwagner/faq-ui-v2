@@ -1,8 +1,8 @@
-import { Tabs } from "../Tabs/Tabs";
+import { Tabs } from "./Tabs";
 import { useFaqs } from "../../hooks/useFaqs";
 import { useState } from "react";
 
-export const FAQComponent = () => {
+export const FaqSection = () => {
   const [activeFaqId, setActiveFaqId] = useState<number | null>(null);
 
   const { faqList, changeTopic } = useFaqs();
@@ -12,13 +12,11 @@ export const FAQComponent = () => {
   };
 
   return (
-    <>
-      <Tabs
-        faqList={faqList}
-        changeTopic={changeTopic}
-        handleFaqClick={handleFaqClick}
-        activeFaqId={activeFaqId}
-      />
-    </>
+    <Tabs
+      faqList={faqList}
+      changeTopic={changeTopic}
+      handleFaqClick={handleFaqClick}
+      activeFaqId={activeFaqId}
+    />
   );
 };

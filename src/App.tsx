@@ -1,11 +1,10 @@
-import "./App.css";
-import { FAQComponent } from "./components/FAQ/FAQ";
+import { FaqSection } from "./components/FaqSection/FaqSection";
 
 const App = () => {
   return (
-    <>
-      <FAQComponent />
-    </>
+    <div>
+      <FaqSection />
+    </div>
   );
 };
 
